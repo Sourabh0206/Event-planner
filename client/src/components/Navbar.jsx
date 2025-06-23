@@ -14,6 +14,11 @@ const Navbar = () => {
         <Link to={"/stories"}  >Stories</Link>
         <Link to={"/gallery"} >Gallery</Link>
         <Link to={"/contact"} >Contact</Link>
+        <button className="border p-3 rounded-md" 
+        onClick={() => navigate ("login")}
+        >{" "}
+        Login to plan your event{" "}
+        </button>
       </div>
     </>
   );
