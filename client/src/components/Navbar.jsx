@@ -1,26 +1,30 @@
 import React from "react";
-import logo from "../assets/logo.png"
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import logo from "../assets/logo.png";
 const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <>
-      <div className="flex justify-center gap-18 items-center font-bold sticky top-0 z-99 text-white">
-        <Link to={"/home"} >Home</Link>
-        <Link to={"/about"} >About</Link>
-        <Link to={"/services"}className="text-white">Services</Link>
-        <Link to={"/"} ><img src={logo} alt="" className="h-20 w-20 font-bold"/></Link>
-
-        <Link to={"/stories"}  >Stories</Link>
-        <Link to={"/gallery"} >Gallery</Link>
-        <Link to={"/contact"} >Contact</Link>
-        <button className="border p-3 rounded-md" 
-        onClick={() => navigate ("login")}
-        >{" "}
-        Login to plan your event{" "}
+      <div className="bg-transparent flex justify-center gap-10  text-xl items-center sticky top-0 z-99">
+        <Link to={"/about"}>About</Link>
+        <Link to={"/services"}>Our Services</Link>
+        <Link to={"/stories"}>Client Stories</Link>
+        <Link to={"/"}>
+          <img src={logo} alt="" className="h-[5em]" />
+        </Link>
+        <Link to={"/gallery"}>Gallery</Link>
+        <Link to={"/contact"}>Contact Us</Link>
+        <button
+          className="border p-3 rounded-md"
+          onClick={() => navigate("login")}
+        >
+          {" "}
+          Login to Plan your event{" "}
         </button>
       </div>
     </>
   );
 };
-export default Navbar
+
+export default Navbar;
