@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import entrance from "../assets/entrance.jpg";
 import { useNavigate } from "react-router-dom";
+import api from "../config/api";
+import {toast} from "react-hot-toast";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -8,15 +10,28 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const formSubmitKro = (e) => {
+  const formSubmitKro = async (e) => {
     e.preventDefault();
     const logindata = {
-      Email: email,
-      Password: password,
-    }
-    console.log(logindata);
-  }
-
+      email: email,
+      password: password,
+    };
+    try {
+      const res = await api.post("/auth/login",logindata);
+      toast.success(res.data.message);
+      setPassword("");
+      setEmail("");
+      navigate( '/UserDashboard')
+      
+    } catch (error) {
+      toast.error(
+        `Error : ${error.response?.status || error.message} / ${
+         error.response?.data.message || ""
+        }`
+      );
+    } 
+  };
+  
   return (
     <>
       <div className="mt-[-10%] relative h-screen flex justify-center items-center">
