@@ -5,23 +5,27 @@ import Hero from "./components/Hero";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import { Toaster } from "react-hot-toast";
 import Contact from "./pages/Contact";
-import {Toaster} from 'react-hot-toast';
-import userDashboard from "./pages/userDashboard";
+import UserDashboard from "./pages/UserDashboard";
+import UserDashboardEdit from "./pages/UserDashboardEdit";
+import CustomerDashboard from "./pages/CustomerDashboard";
+
 const App = () => {
   return (
     <>
       <BrowserRouter>
-      <Toaster/>
+        <Toaster />
         <Navbar />
-      
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/UserDashboard" element={<userDashboard/> } />
-
-          <Route path="/Contact" element={<Contact />} />
+           <Route path="/contact" element={<Contact />} />
+          <Route path="/userDashboard" element={<UserDashboard />} />
+          <Route path="/userDashboardEdit" element={<UserDashboardEdit />} />
+          <Route path="/dashboard" element={<CustomerDashboard />} />
         </Routes>
       </BrowserRouter>
     </>
