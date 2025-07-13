@@ -22,7 +22,7 @@ const Login = () => {
       toast.success(res.data.message);
       setPassword("");
       setEmail("");
-      navigate("/userDashboard");
+      navigate("/customerDashboard");
     } catch (error) {
       toast.error(
         `Error : ${error.response?.status || error.message} | ${
@@ -61,7 +61,7 @@ const Login = () => {
                 />
               </div>
               <div>
-                <label className=" text-amber-200 block mb-1">Password</label>
+                <label className="text-amber-200 block mb-1">Password</label>
                 <input
                   type="password"
                   className="w-full px-4 py-2 rounded-lg bg-white/20 text-black placeholder:text-gray-500 border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-pink-300"
@@ -78,10 +78,10 @@ const Login = () => {
                 Sign In
               </button>
             </form>
-            <p className="text-center text-bold text-red-500 font-bold mt-6">
+            <p className="text-center text-sm text-black mt-6">
               Don’t have an account?{" "}
               <span
-                className="text-amber-400 underline font-bold cursor-pointer"
+                className="text-amber-400 underline cursor-pointer"
                 onClick={() => navigate("/register")}
               >
                 Register

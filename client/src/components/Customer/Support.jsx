@@ -6,4 +6,4 @@ const Support = () => {
   )
 }
 
-export default Support
+export default Support;

@@ -26,7 +26,7 @@ const UserDashboardEdit = () => {
     }
   };
 
-  const handelChange = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData((prev) => ({ ...prev, [name]: value }));
   };
@@ -105,7 +105,7 @@ const UserDashboardEdit = () => {
               type="text"
               name="fullName"
               value={userdata.fullName}
-              onChange={handelChange}
+              onChange={handleChange}
               className="p-2 border rounded-lg border-rose-300"
             />
           </h3>
@@ -118,7 +118,7 @@ const UserDashboardEdit = () => {
               type="text"
               name="fullName"
               value={userdata.phone}
-              onChange={handelChange}
+              onChange={handleChange}
               className="p-2 border rounded-lg border-rose-300"
             />
           </h3>
